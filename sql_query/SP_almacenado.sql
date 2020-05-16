@@ -1,7 +1,7 @@
 ALTER PROCEDURE example.SP_factummaryS
 AS
-
-/*SELECT 
+BEGIN
+    SELECT 
     Cus.CustomerID,
     Cus.CustomerName,
     Supp.SupplierID,
@@ -21,8 +21,6 @@ on OrdD.ProductID = Pro.ProductID
 INNER JOIN example.Suppliers as Supp
 on Pro.SupplierID = Supp.SupplierID
 GROUP BY Cus.CustomerID,Cus.CustomerName,Supp.SupplierID,Supp.SupplierName,Ord.OrderDate,OrdD.QUantity,Pro.Price
+END
 
-    INSERT INTO example.Suppliers
-    VALUES (@SupplierId, @SupplierName, @Address, @City, @PostalCode, @Country, @Phone,@contactName)*/
-
-
+EXEC example.SP_factummaryS
