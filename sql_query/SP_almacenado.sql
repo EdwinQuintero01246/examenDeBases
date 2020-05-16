@@ -24,3 +24,6 @@ GROUP BY Cus.CustomerID,Cus.CustomerName,Supp.SupplierID,Supp.SupplierName,Ord.O
 END
 
 EXEC example.SP_factummaryS
+select * FROM example.fact_summary
+
+INSERT Into example.fact_summary EXEC example.SP_factummaryS
