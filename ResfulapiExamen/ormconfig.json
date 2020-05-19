@@ -1,0 +1,17 @@
+{
+    "type":"mssql",
+    "host":"unahedwinquintero.database.windows.net",
+    "port":1433,
+    "username":"mac.01246",
+    "password":"Soybonito.93",
+    "database":"ingreso_vehiculos",
+    "options":{
+        "synchronize":true,
+        "logging":false,
+        "encrypt":true,
+        "enableArithAbort":true
+    },
+    "entities":["src/entity/**/*.ts"],
+    "migrations":["src/migration/**/*.ts"],
+    "subcribers":["src/suscriber/**/*.ts"]
+}
