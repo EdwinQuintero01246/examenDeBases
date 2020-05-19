@@ -7,10 +7,14 @@ CREATE table example.fact_summary(
     [year] int,
     Total int,
     SuperoPromedio int,
-    PorcentajeVentaMensual DECIMAL
+    PorcentajeVentaMensual float 
 )
 CREATE table example.settings(
-    settingsID int,
+    Anio int,
     [Value] Int
 )
-/*drop table example.fact_summary*/
+
+/*
+    drop table example.fact_summary
+    drop table example.settings
+*/
