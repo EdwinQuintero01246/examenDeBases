@@ -1,4 +1,5 @@
-ALTER PROCEDURE example.SP_factummaryS
+ALTER PROCEDURE example.SP_factummarySListar
+@CustomerID int
 AS
 BEGIN
     WITH Ctea as 
@@ -51,15 +52,6 @@ BEGIN
     on Pro.SupplierID = Supp.SupplierID
     INNER JOIN Ctea as C
     on Supp.SupplierID = C.SupplierID and MONTH(Ord.OrderDate) = C.Mes
+    WHERE Cus.CustomerID = @CustomerID
     GROUP BY Cus.CustomerID,Cus.CustomerName,Supp.SupplierID,Supp.SupplierName,MONTH(Ord.OrderDate),YEAR(Ord.OrderDate),C.Promedio
 END
-DELETE  example.fact_summary
-INSERT Into example.fact_summary EXEC example.SP_factummaryS
-/*
-EXEC example.SP_factummaryS
-Drop PROCEDURE example.SP_factummaryS
-select * FROM example.fact_summary
-DELETE  example.fact_summary
-Drop Table example.fact_summary
-INSERT Into example.fact_summary EXEC example.SP_factummaryS
-*/
